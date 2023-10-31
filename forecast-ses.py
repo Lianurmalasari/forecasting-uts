@@ -40,7 +40,7 @@ if st.button('Prediksi'):
     # Tampilkan tabel hasil prediksi
     st.subheader('Tabel Hasil Prediksi')
     forecast_df = pd.DataFrame({
-    'Tanggal': pd.date_range(start=data.index[-1], periods=forecast_steps, freq='W'),
+    'Tanggal': pd.date_range(start=data.index[-1], periods=forecast_steps, freq='W-SUN'),
     'Prediksi': forecast
     })
     st.dataframe(forecast_df)
