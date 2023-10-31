@@ -290,7 +290,7 @@ comparision_df.sort_values(by='RMSE')
 ```
 <img width="227" alt="image" src="https://github.com/Lianurmalasari/forecasting-uts/assets/145843965/b1efaf61-dae3-4c3a-8b7d-feb388618f1a">
 
-dapat dilihat jika nilai RMSE dan MAPE ada pada algoritma ARIMA, maka dari itu algoritma yang akan dipakai adalah algoritma ARIMA
+dapat dilihat jika nilai RMSE dan MAPE ada pada algoritma Single Exponential Smoothing, maka dari itu algoritma yang akan dipakai adalah algoritma Single Exponential Smoothing
 
 ## Deployment
 Link Aplikasi: [Forecasting Rata-Rata Harga Alpukat](https://forecast-alpukat-lia.streamlit.app/)
