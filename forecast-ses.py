@@ -18,7 +18,7 @@ data.set_index('Date', inplace=True)
 # Judul aplikasi
 st.title('Forecasting Rata-Rata Harga Alpukat')
 
-# Slider untuk menentukan jumlah bulan yang akan diprediksi
+# Slider untuk menentukan jumlah minggu yang akan diprediksi
 forecast_steps = st.slider('Jumlah Minggu Prediksi', 1, 30, 12)
 
 # Tombol "Prediksi"
@@ -28,7 +28,7 @@ if st.button('Prediksi'):
     
     # Tampilkan data asli
     st.subheader('Data Asli')
-    st.line_chart(data)
+    st.line_chart(data['AveragePrice'])  # Select the 'AveragePrice' column for the line chart
 
     # Tampilkan hasil prediksi
     st.subheader('Hasil Prediksi')
