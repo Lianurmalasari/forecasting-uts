@@ -34,7 +34,7 @@ Menjelaskan tujuan dari pernyataan masalah:
 ## Data Understanding
 Dataset yang diambil dari kaggle ini berisi 9 kolom dan yang dipakai hanyalah 2 yaitu tanggal dan Rata-rata harga alpukat. 
 
-Dataset: [Avocado Prices](https://www.kaggle.com/datasets/neuromusic/avocado-prices)).
+Dataset: [Avocado Prices](https://www.kaggle.com/datasets/neuromusic/avocado-prices).
 
 Dalam proses data understanding ini tahapan pertama yang dilakukan adalah:
 1. import dataset
