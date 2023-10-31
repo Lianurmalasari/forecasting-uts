@@ -182,7 +182,7 @@ plot_pacf(diff_df)
 ## Modeling
 Ditahap modeling ini kita akan menggunakan 3 algoritma yang mana akan kita bandingkan algoritma terbaik yang selanjutnya akan dipakai untuk aplikasi tersebut.
 
-kita akan coba untuk memprediksi 43 bulan kedepan:
+kita akan coba untuk memprediksi 68 minggu kedepan:
 
   ### Single Exponential Smoothing
 ```
