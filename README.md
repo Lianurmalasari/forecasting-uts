@@ -188,14 +188,14 @@ kita akan coba untuk memprediksi 43 bulan kedepan:
 ```
 single_exp = SimpleExpSmoothing(train).fit()
 single_exp_train_pred = single_exp.fittedvalues
-single_exp_test_pred = single_exp.forecast(43)
+single_exp_test_pred = single_exp.forecast(68)
 ```
 ```
-train['#Passengers'].plot(style='--', color='gray', legend=True, label='train')
-test['#Passengers'].plot(style='--', color='r', legend=True, label='test')
+train['AveragePrice'].plot(style='--', color='gray', legend=True, label='train')
+test['AveragePrice'].plot(style='--', color='r', legend=True, label='test')
 single_exp_test_pred.plot(color='b', legend=True, label='Prediction')
 ```
-![Alt text](image-5.png)
+![image](https://github.com/Lianurmalasari/forecasting-uts/assets/145843965/020631a0-87a9-4b16-9a19-49d180470f18)
 
 ```
 Train_RMSE_SES = mean_squared_error(train, single_exp_train_pred)**0.5
@@ -208,23 +208,24 @@ print('Test RMSE :', Test_RMSE_SES)
 print('Train MAPE :', Train_MAPE_SES)
 print('Test MAPE :', Test_MAPE_SES)
 ```
-Train RMSE : 23.47083303956671
-Test RMSE : 106.96706722437959
-Train MAPE : 0.08532342002218128
-Test MAPE : 0.17254543771244724
+Train RMSE : 5.153814386780101<br>
+Test RMSE : 19.64903748252027<br>
+Train MAPE : 0.026191870205027584<br>
+Test MAPE : 0.10254968128586632<br>
 
   ## Double Exponential Smoothing
 ```
 double_exp = ExponentialSmoothing(train, trend=None, initialization_method='heuristic', seasonal='add', seasonal_periods=29, damped_trend=False).fit()
 double_exp_train_pred = double_exp.fittedvalues
-double_exp_test_pred = double_exp.forecast(43)
+double_exp_test_pred = double_exp.forecast(68)
 ```
 ```
-train['#Passengers'].plot(style='--', color='gray', legend=True, label='train')
-test['#Passengers'].plot(style='--', color='r', legend=True, label='test')
+train['AveragePrice'].plot(style='--', color='gray', legend=True, label='train')
+test['AveragePrice'].plot(style='--', color='r', legend=True, label='test')
 double_exp_test_pred.plot(color='b', legend=True, label='Prediction')
 ```
-![Alt text](image-6.png)
+![image](https://github.com/Lianurmalasari/forecasting-uts/assets/145843965/7d80dd53-3a55-4419-a1aa-0ae6d344565b)
+
 
 ```
 Train_RMSE_DES = mean_squared_error(train, double_exp_train_pred)**0.5
@@ -237,23 +238,24 @@ print('Test RMSE :', Test_RMSE_DES)
 print('Train MAPE :', Train_MAPE_DES)
 print('Test MAPE :', Test_MAPE_DES)
 ```
-Train RMSE : 23.283893193337274
-Test RMSE : 94.57214255933388
-Train MAPE : 0.07900374086543273
-Test MAPE : 0.15438871066201712
+Train RMSE : 5.008014846943417<br>
+Test RMSE : 20.659434661969186<br>
+Train MAPE : 0.02371272497473234<br>
+Test MAPE : 0.11139236252098973<br>
 
   ## ARIMA
 ```
 ar = ARIMA(train, order=(15,1,15)).fit()
 ar_train_pred = ar.fittedvalues
-ar_test_pred = ar.forecast(43)
+ar_test_pred = ar.forecast(68)
 ```
 ```
-train['#Passengers'].plot(style='--', color='gray', legend=True, label='train')
-test['#Passengers'].plot(style='--', color='r', legend=True, label='test')
+train['AveragePrice'].plot(style='--', color='gray', legend=True, label='train')
+test['AveragePrice'].plot(style='--', color='r', legend=True, label='test')
 ar_test_pred.plot(color='b', legend=True, label='Prediction')
 ```
-![Alt text](image-7.png)
+![image](https://github.com/Lianurmalasari/forecasting-uts/assets/145843965/f79cbc20-cedf-472c-abb9-fa6fe6c0bc0e)
+
 ```
 Train_RMSE_AR = mean_squared_error(train, ar_train_pred)**0.5
 Test_RMSE_AR = mean_squared_error(test, ar_test_pred)**0.5
@@ -265,10 +267,10 @@ print('Test RMSE :', Test_RMSE_AR)
 print('Train MAPE :', Train_MAPE_AR)
 print('Test MAPE :', Test_MAPE_AR)
 ```
-Train RMSE : 14.20071832771583
-Test RMSE : 45.285402548094446
-Train MAPE : 0.04423659596567478
-Test MAPE : 0.0929043309516595
+Train RMSE : 14.635330876406917<br>
+Test RMSE : 20.204805696354683<br>
+Train MAPE : 0.03223810862444207<br>
+Test MAPE : 0.10467032195997751<br>
 
 Selanjutnya mari kita evaluasi 3 algoritma tersebut
 
@@ -286,10 +288,10 @@ comparision_df.set_index('Model', inplace=True)
 ```
 comparision_df.sort_values(by='RMSE')
 ```
-![Alt text](image-8.png)
+<img width="227" alt="image" src="https://github.com/Lianurmalasari/forecasting-uts/assets/145843965/b1efaf61-dae3-4c3a-8b7d-feb388618f1a">
 
 dapat dilihat jika nilai RMSE dan MAPE ada pada algoritma ARIMA, maka dari itu algoritma yang akan dipakai adalah algoritma ARIMA
 
 ## Deployment
-Link Aplikasi: [ARIMA Forecasting App](https://forecast-ar.streamlit.app/)
+Link Aplikasi: [Forecasting Rata-Rata Harga Alpukat](https://forecast-alpukat-lia.streamlit.app/)
 
