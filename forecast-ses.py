@@ -15,6 +15,9 @@ data = pd.read_csv(data_file)
 data['Date'] = pd.to_datetime(data['Date'])
 data.set_index('Date', inplace=True)
 
+# Resample DataFrame ke frekuensi mingguan
+data = data.resample('W').sum()
+
 # Judul aplikasi
 st.title('Forecasting Rata-Rata Harga Alpukat')
 
