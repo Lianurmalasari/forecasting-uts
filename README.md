@@ -292,6 +292,18 @@ comparision_df.sort_values(by='RMSE')
 
 dapat dilihat jika nilai RMSE dan MAPE ada pada algoritma Single Exponential Smoothing, maka dari itu algoritma yang akan dipakai adalah algoritma Single Exponential Smoothing
 
+coba prediksi menggunakan algoritma Single Exponential Smoothing:
+```
+single_exp = SimpleExpSmoothing(df).fit()
+single_exp_test_pred = single_exp.forecast(68)
+```
+```
+df['AveragePrice'].plot(style='--', color='gray', legend=True, label='known')
+single_exp_test_pred.plot(color='b', legend=True, label='Prediction')
+```
+![image](https://github.com/Lianurmalasari/forecasting-uts/assets/145843965/f7279c6b-2fe2-4c70-90ea-4df4632f8d69)
+
+
 ## Deployment
 Link Aplikasi: [Forecasting Rata-Rata Harga Alpukat](https://forecast-alpukat-lia.streamlit.app/)
 
