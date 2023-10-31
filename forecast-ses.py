@@ -22,7 +22,7 @@ data = data.resample('W').sum()
 st.title('Forecasting Rata-Rata Harga Alpukat')
 
 # Slider untuk menentukan jumlah minggu yang akan diprediksi
-forecast_steps = st.slider('Jumlah Minggu Prediksi', 1, 30, 12)
+forecast_steps = st.slider('Jumlah Minggu Prediksi', 1, 100, 1)
 
 # Tombol "Prediksi"
 if st.button('Prediksi'):
